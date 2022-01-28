@@ -1,6 +1,6 @@
 Methods: 
 	GET http://localhost:8080/FetchNextNumber/102
-	        * We use this API to fetch the present value from the database and the next generate value.
+	        * We use this API to fetch the present value from the database by giving categoryCode in the url and the next generate value.
 	
 	GET http://localhost:8080/fetchAll
 		* We use this API to fetch all the data from the database.
