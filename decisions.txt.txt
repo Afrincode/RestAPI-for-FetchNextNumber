@@ -1,0 +1,11 @@
+PreRequisites & Technologies:
+
+	* Project Dependencies:
+		- Spring Web : Build web, including RESTful, applications using Spring MVC.
+		- Spring Data JPA : Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.
+		- MySQL Driver : MySQL JDBC and R2DBC driver.
+		- Spring Boot Dev Tools : Provides fast application restarts, LiveReload, and configurations for enhanced development experience.
+	
+	*DBMS   - MySQL : Relational Database Management System.
+
+	*IDE 	-STS(Spring Tool Suite)

@@ -63,5 +63,11 @@ public class FetchNextNumberServiceImp implements FetchNextNumberService
 		newfetchNumObj.setCategoryCode(categoryCode);
 		fetchNextNumberRepository.save(newfetchNumObj);
 	}
+
+	@Override
+	public List<FetchNextNumber> findAll() {
+		// TODO Auto-generated method stub
+		return fetchNextNumberRepository.findAll();
+	}
 	
 }
