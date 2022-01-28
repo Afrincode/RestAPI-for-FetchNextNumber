@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.rest.entities.FetchNextNumber;
 
 @Repository
-public interface FetchNextNumberRepository extends JpaRepository<FetchNextNumber, String>{
+public interface FetchNextNumberRepository extends JpaRepository<FetchNextNumber, Long>{
 
 }

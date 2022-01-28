@@ -1,5 +1,6 @@
 package com.rest.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,16 @@ public class FetchNextNumberServiceImp implements FetchNextNumberService
 	public String fetchNextNumberByCategoryCode(String categoryCode) {
 		
 		long oldValue;
-		Optional<FetchNextNumber> optional=fetchNextNumberRepository.findById(categoryCode);
+		long id=0;
+		List<FetchNextNumber> list=fetchNextNumberRepository.findAll();
+		for(int i=0;i<list.size();i++)
+		{
+			if(list.get(i).getCategoryCode()==categoryCode)
+			{
+				id=list.get(i).getId();
+			}
+		}
+		Optional<FetchNextNumber> optional=fetchNextNumberRepository.findById(id);
 		FetchNextNumber fetchNext=null;
 		if(optional.isPresent()) {
 			fetchNext=optional.get();
@@ -28,7 +38,7 @@ public class FetchNextNumberServiceImp implements FetchNextNumberService
 			oldValue=0;
 		}
 		long nextValue=computeNextNumber(oldValue);
-		saveNextNumber(nextValue);
+		saveNextNumber(nextValue,categoryCode);
 		return " Old Value: "+oldValue+"  New Value: "+nextValue;
 		
 		
@@ -53,9 +63,12 @@ public class FetchNextNumberServiceImp implements FetchNextNumberService
 	}
 
 	@Override
-	public void saveNextNumber(long nextValue) {
+	public void saveNextNumber(long nextValue,String categoryCode) {
 	
-		
+		FetchNextNumber newfetchNumObj=new FetchNextNumber();
+		newfetchNumObj.setValue(nextValue);
+		newfetchNumObj.setCategoryCode(categoryCode);
+		fetchNextNumberRepository.save(newfetchNumObj);
 	}
 	
 }

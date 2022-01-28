@@ -7,5 +7,5 @@ import com.rest.entities.FetchNextNumber;
 public interface FetchNextNumberService {
 
    public String fetchNextNumberByCategoryCode(String categoryCode);
-   public void saveNextNumber(long nextNumber);
+   public void saveNextNumber(long nextNumber,String categoryCode);
 }
