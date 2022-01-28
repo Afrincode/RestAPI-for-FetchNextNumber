@@ -28,6 +28,7 @@ public class FetchNextNumberServiceImp implements FetchNextNumberService
 			oldValue=0;
 		}
 		long nextValue=computeNextNumber(oldValue);
+		saveNextNumber(nextValue);
 		return " Old Value: "+oldValue+"  New Value: "+nextValue;
 		
 		
@@ -36,12 +37,23 @@ public class FetchNextNumberServiceImp implements FetchNextNumberService
 	private long computeNextNumber(long oldValue) {
 		// TODO Auto-generated method stub
 		long nextValue=0;
-		
+		try {
+			
+			Thread.sleep(5000);
+			long num;
+			if(oldValue==0){
+				nextValue=10;
+			}
+			else{
+				nextValue=oldValue+9;
+			}
+				
+		}catch(Exception e) {System.out.println(e);}
 		return nextValue;
 	}
 
 	@Override
-	public void saveNextNumber(long nextNumber) {
+	public void saveNextNumber(long nextValue) {
 	
 		
 	}
