@@ -15,19 +15,29 @@ public class FetchNextNumberServiceImp implements FetchNextNumberService
 	private FetchNextNumberRepository fetchNextNumberRepository;
 
 	@Override
-	public FetchNextNumber fetchNextNumberByCategoryCode(String categoryCode) {
+	public String fetchNextNumberByCategoryCode(String categoryCode) {
 		
+		long oldValue;
 		Optional<FetchNextNumber> optional=fetchNextNumberRepository.findById(categoryCode);
 		FetchNextNumber fetchNext=null;
 		if(optional.isPresent()) {
 			fetchNext=optional.get();
+			oldValue=fetchNext.getValue();
 		}
 		else{
-			throw new RuntimeException("Employee not found for the id::"+categoryCode);
+			oldValue=0;
 		}
+		long nextValue=computeNextNumber(oldValue);
+		return " Old Value: "+oldValue+"  New Value: "+nextValue;
 		
-		return fetchNext;
 		
+	}
+
+	private long computeNextNumber(long oldValue) {
+		// TODO Auto-generated method stub
+		long nextValue=0;
+		
+		return nextValue;
 	}
 
 	@Override

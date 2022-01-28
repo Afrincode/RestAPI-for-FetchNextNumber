@@ -6,6 +6,6 @@ import com.rest.entities.FetchNextNumber;
 
 public interface FetchNextNumberService {
 
-   public FetchNextNumber fetchNextNumberByCategoryCode(String categoryCode);
+   public String fetchNextNumberByCategoryCode(String categoryCode);
    public void saveNextNumber(long nextNumber);
 }
