@@ -15,7 +15,7 @@ public class HomeController {
 	private FetchNextNumberService fetchNextNumberService;
 	
 	@GetMapping("/FetchNextNumber/{categoryCode}")
-	public String home(@PathVariable("categoryCode") String categoryCode)
+	public String home(@PathVariable("categoryCode") long categoryCode)
 	{
 		return fetchNextNumberService.fetchNextNumberByCategoryCode(categoryCode);
 	}
