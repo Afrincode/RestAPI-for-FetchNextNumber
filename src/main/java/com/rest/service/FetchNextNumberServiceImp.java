@@ -30,7 +30,7 @@ public class FetchNextNumberServiceImp implements FetchNextNumberService
 			oldValue=0;
 		}
 		long nextValue=computeNextNumber(oldValue);
-		saveNextNumber(nextValue);
+		saveNextNumber(nextValue,categoryCode+1);
 		return " Old Value: "+oldValue+"  New Value: "+nextValue;
 		
 		
@@ -55,10 +55,11 @@ public class FetchNextNumberServiceImp implements FetchNextNumberService
 	}
 
 	@Override
-	public void saveNextNumber(long nextValue) {
+	public void saveNextNumber(long nextValue,long categoryCode) {
 	
 		FetchNextNumber newfetchNumObj=new FetchNextNumber();
 		newfetchNumObj.setValue(nextValue);
+		newfetchNumObj.setCategoryCode(categoryCode);
 		fetchNextNumberRepository.save(newfetchNumObj);
 	}
 	

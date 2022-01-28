@@ -8,7 +8,6 @@ import javax.persistence.Id;
 public class FetchNextNumber
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long categoryCode;
     private Long value;
     
@@ -20,8 +19,6 @@ public class FetchNextNumber
 	public String toString() {
 		return "FetchNextNumber [categoryCode=" + categoryCode + ", value=" + value + "]";
 	}
-	
-	
 	
 	public Long getCategoryCode() {
 		return categoryCode;
