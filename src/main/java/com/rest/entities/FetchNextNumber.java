@@ -9,7 +9,6 @@ public class FetchNextNumber
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
 	private String categoryCode;
     private Long value;
     
@@ -19,13 +18,7 @@ public class FetchNextNumber
 	}
 	@Override
 	public String toString() {
-		return "FetchNextNumber [id=" + id + ", categoryCode=" + categoryCode + ", value=" + value + "]";
-	}
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
+		return "FetchNextNumber categoryCode=" + categoryCode + ", value=" + value + "]";
 	}
 	public String getCategoryCode() {
 		return categoryCode;
