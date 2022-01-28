@@ -35,8 +35,9 @@ public class FetchNextNumberServiceImp implements FetchNextNumberService
 		
 		
 	}
-
-	private long computeNextNumber(long oldValue) {
+	
+	@Override
+	public long computeNextNumber(long oldValue) {
 		// TODO Auto-generated method stub
 		long nextValue=0;
 		try {
